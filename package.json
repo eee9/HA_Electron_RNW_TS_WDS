@@ -1,0 +1,74 @@
+{
+  "name": "elec-rnw-wds-ts-k6b",
+  "version": "0.0.5",
+  "description": "Electron React Webpack Typescript",
+  "main": "main.js",
+  "author": "maix <maix@gmail.com>",
+  "homepage": ".",
+  "private": true,
+  "keywords": [
+    "electron",
+    "electron-reload",
+    "electron-builder",
+    "react",
+    "react-native",
+    "react-native-web",
+    "typescript",
+    "webpack",
+    "webpack-dev-server"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-native": "^0.62.2",
+    "react-native-web": "^0.12.3"
+  },
+  "devDependencies": {
+    "@types/electron": "^1.6.10",
+    "@types/react": "^16.9.36",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-native": "^0.62.13",
+    "@types/webpack": "^4.41.17",
+    "electron": "^9.0.3",
+    "electron-builder": "^22.7.0",
+    "electron-reload": "^1.5.0",
+    "source-map-loader": "^1.0.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "// deb": "deb",
+  "build": {
+    "appId": "com.maixtest.app",
+    "productName": "MxTSApp8-K6B",
+    "directories": {
+      "app": "./app",
+      "output": "./_builds"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    }
+  },
+  "scripts": {
+    "b": "webpack-dev-server --open --mode development",
+    "c": "webpack --mode development",
+    "t": "tsc .",
+    "w": "webpack --mode development --watch",
+    "w_": "yarn w &",
+    "e": "NODE_DEV=Maix electron --no-sandbox ./app/main.js",
+    "ee": "yarn c && yarn w_ && yarn e",
+    "r": "./_builds/MxTSApp8-K6B-0.0.5.AppImage --no-sandbox",
+    "rasp": "electron-builder --linux --armv7l",
+    "raspx": "electron-builder --linux deb --armv7l",
+    "win": "electron-builder --win --x64",
+    "x": "electron-builder --linux --x64",
+    "xx": "electron-builder --linux deb --x64",
+    "xxz": "electron-builder --linux deb tar.xz --x64",
+    "z": "electron-builder"
+  }
+}
